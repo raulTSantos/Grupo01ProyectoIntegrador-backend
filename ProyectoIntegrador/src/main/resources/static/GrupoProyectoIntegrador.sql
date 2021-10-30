@@ -1,16 +1,18 @@
 create database bdProyectoIntegrador;
 use bdProyectoIntegrador;
+#drop table usuario;
+
 create table usuario(
 idUsuario int primary key not null auto_increment,
-nombres varchar(255) ,
-apaterno varchar(45) ,
-amaterno varchar(45) ,
+nombres varchar(255) not null,
+apaterno varchar(45) not null,
+amaterno varchar(45) not null,
 fechaNacimiento date ,
 fechaRegistro timestamp  default CURRENT_TIMESTAMP,
-email varchar(45)  not null unique ,
+email varchar(45) not null,
 celular varchar(15) ,
 direccion varchar(45) ,
-dni varchar(8) unique not null,
+dni varchar(8) not null,
 login varchar(45) not null,
 password varchar(45)   not null
 );
@@ -61,7 +63,14 @@ nombre varchar(50) not null,
 idCiudad int not null,
 foreign key (idCiudad) references ciudad (idCiudad)
 );
+alter table cine
+add column direccion varchar(100) not null;
+
 insert into cine values(null,'CineTrujillo',1);
+insert into cine values(null,'CineCajamarca',2,'Av .Huascar');
+
+#select*from cine  inne
+
 
 create table sala(
 idSala int primary key not null auto_increment,
@@ -71,19 +80,6 @@ insert into sala values(null,'Sala 1');
 insert into sala values(null,'Sala 2');
 insert into sala values(null,'Sala 3');
 select*from sala;
-
-create table cine_sala(
-idCine int not null,
-idSala int not null,
-primary key (idCine,idSala),
-foreign key (idCine) references cine (idCine),
-foreign key (idSala) references Sala (idSala)
-);
-insert into cine_sala values(1,1);
-insert into cine_sala values(1,2);
-insert into cine_sala values(1,3);
-select*from cine_sala;
-
 
 create table asiento(
 idAsiento int primary key not null auto_increment,
@@ -110,8 +106,34 @@ descripcion varchar(12)
 insert into estado values(null,'PayPal');
 select*from pago;
 
+drop table boleto;
+create table boleto(
+idBoleto int primary key not null auto_increment,
+persona varchar(20) not null,
+precio double not null
+);
+insert into boleto values(null,'Niños',15.0);
+insert into boleto values(null,'General',17.50);
+insert into boleto values(null,'Mayores de 60 años',20);
+select*from boleto;
+
+
+
+create table cine_sala(
+idCine int not null,
+idSala int not null,
+primary key (idCine,idSala),
+foreign key (idCine) references cine (idCine),
+foreign key (idSala) references Sala (idSala)
+);
+insert into cine_sala values(1,1);
+insert into cine_sala values(1,2);
+insert into cine_sala values(1,3);
+select*from cine_sala;
+
+
 # De apartir de aqui no lo ejecute porque me 
-falta definir como implementar el esatdo de asientos
+#falta definir como implementar el esatdo de asientos
 
 create table sala_asiento(
 idAsiento int not null,
@@ -152,8 +174,4 @@ primary key(idCompra,idBoleto),
 foreign key (idCompra) references compra(idCompra),
 foreign key (idBoleto) references pago (idPago)
 );
-create table boleto(
-idBoleto int primary key not null auto_increment,
-persona varchar(12) not null,
-precio double not null
-);
+

@@ -6,12 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
+@Table(name = "usuario")
 public class Usuario {
 
 	@Id
@@ -21,6 +25,7 @@ public class Usuario {
 	private String apaterno;
 	private String amaterno;
 	
+	@JsonFormat(pattern = "yyyy-MM-dd", timezone="America/Lima" )
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fechaNacimiento;
