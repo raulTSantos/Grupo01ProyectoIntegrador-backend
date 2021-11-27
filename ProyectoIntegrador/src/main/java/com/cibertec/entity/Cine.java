@@ -20,6 +20,13 @@ public class Cine {
 	private int idCine;
 	private String nombre;
 	private String direccion;
+	private String imagen;
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idCiudad")

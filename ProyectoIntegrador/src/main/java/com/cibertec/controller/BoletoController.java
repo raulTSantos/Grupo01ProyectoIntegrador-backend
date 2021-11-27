@@ -13,7 +13,7 @@ import com.cibertec.entity.Boleto;
 import com.cibertec.service.BoletoService;
 
 @RestController
-@RequestMapping("/rest/ticket")
+@RequestMapping("/rest/tickets")
 public class BoletoController {
 
 	@Autowired

@@ -13,7 +13,7 @@ import com.cibertec.entity.Asiento;
 import com.cibertec.service.AsientoService;
 
 @RestController
-@RequestMapping("/rest/asiento")
+@RequestMapping("/rest/asientos")
 public class AsientoController {
 
 	@Autowired

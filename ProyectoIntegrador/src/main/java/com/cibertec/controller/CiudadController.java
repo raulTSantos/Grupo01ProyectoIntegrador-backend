@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,7 +14,8 @@ import com.cibertec.entity.Ciudad;
 import com.cibertec.service.CiudadService;
 
 @RestController
-@RequestMapping("/rest/ciudad")
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/rest/ciudades")
 public class CiudadController {
 
 	@Autowired
@@ -26,3 +28,4 @@ public class CiudadController {
 		return ResponseEntity.ok(listCiudad);
 	}
 }
+ 

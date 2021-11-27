@@ -22,15 +22,20 @@ public class Pelicula {
 	private String duracion;
 	private String idioma;
 	private String director; 
-	private String restinccion; 
+	private String restriccion; 
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name ="idGenero") 
 	private  Genero genero ;
-
+	private String imagen;
 	
-	
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
 	
 	public int getIdPelicula() {
 		return idPelicula;
@@ -62,17 +67,18 @@ public class Pelicula {
 	public void setDirector(String director) {
 		this.director = director;
 	}
-	public String getRestinccion() {
-		return restinccion;
-	}
-	public void setRestinccion(String restinccion) {
-		this.restinccion = restinccion;
-	}
+
 	public Genero getIdGenero() {
 		return genero;
 	}
 	public void setIdGenero(Genero idGenero) {
 		this.genero = idGenero;
+	}
+	public String getRestriccion() {
+		return restriccion;
+	}
+	public void setRestriccion(String restriccion) {
+		this.restriccion = restriccion;
 	}
 	
 	

@@ -13,7 +13,7 @@ import com.cibertec.entity.Compra;
 import com.cibertec.service.CompraService;
 
 @RestController
-@RequestMapping("/rest/compra")
+@RequestMapping("/rest/compras")
 public class CompraController {
 
 	@Autowired

@@ -56,7 +56,55 @@ public class Cartelera {
 	 */
 	private String hora ;
 	
-	private String descripcion; 
-	
+	private String descripcion;
 
+	public int getIdCartelera() {
+		return idCartelera;
+	}
+
+	public void setIdCartelera(int idCartelera) {
+		this.idCartelera = idCartelera;
+	}
+
+	public Pelicula getPelicula() {
+		return pelicula;
+	}
+
+	public void setPelicula(Pelicula pelicula) {
+		this.pelicula = pelicula;
+	}
+
+	public Cine getCine() {
+		return cine;
+	}
+
+	public void setCine(Cine cine) {
+		this.cine = cine;
+	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public String getHora() {
+		return hora;
+	}
+
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	} 
+	
+	
 }
