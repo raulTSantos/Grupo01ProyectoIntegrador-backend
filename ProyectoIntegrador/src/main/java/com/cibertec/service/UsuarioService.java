@@ -12,5 +12,6 @@ public interface UsuarioService {
 	public  Optional<Usuario> findUserById(int id);
 	public void deleteUser(int id);
 	public  Optional<Usuario> login(String email ,String password);
+	public Usuario obtenerEmail(String email);
 	
 }

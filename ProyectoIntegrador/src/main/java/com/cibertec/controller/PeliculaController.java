@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cibertec.entity.Cine;
 import com.cibertec.entity.Pelicula;
+import com.cibertec.service.CineService;
 import com.cibertec.service.PeliculaService;
 
 @RestController
@@ -25,6 +27,14 @@ public class PeliculaController {
 	@Autowired
 	private PeliculaService peliculaService;
 
+	
+	@GetMapping
+	@ResponseBody
+	public ResponseEntity<List<Pelicula>> getCine(){
+		List<Pelicula> listCine = peliculaService.listarPelicula();
+		return ResponseEntity.ok(listCine);
+	}
+	
 	@GetMapping("/consultapelicula")
 	@ResponseBody
 	public ResponseEntity<Map<String, Object>> consultaPelicula(

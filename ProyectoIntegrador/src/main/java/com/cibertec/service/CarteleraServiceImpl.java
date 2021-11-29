@@ -9,16 +9,21 @@ import com.cibertec.entity.Cartelera;
 import com.cibertec.repository.CarteleraRepository;
 
 @Service
-public class CarteleraServiceImpl implements CarteleraService{
+public class CarteleraServiceImpl implements CarteleraService {
 
-	
-	    @Autowired
-	    private CarteleraRepository repository;
-	
+	@Autowired
+	private CarteleraRepository repository;
+
 	@Override
 	public List<Cartelera> consultarCartelera(int idPelicula, int idCine) {
-		
-		return repository.consultarCartelera(idPelicula, idCine) ;
+
+		return repository.consultarCartelera(idPelicula, idCine);
+	}
+
+	@Override
+	public List<Cartelera> getAllCartelera() {
+		// TODO Auto-generated method stub
+		return repository.findAll();
 	}
 
 }

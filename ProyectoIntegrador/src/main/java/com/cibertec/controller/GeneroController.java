@@ -10,21 +10,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cibertec.entity.Asiento;
-import com.cibertec.service.AsientoService;
+import com.cibertec.entity.Genero;
+
+import com.cibertec.service.GeneroService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/rest/asientos")
-public class AsientoController {
+@RequestMapping("/rest/generos")
+public class GeneroController {
 
 	@Autowired
-	private AsientoService service;
-
+	private GeneroService service;
+	
 	@GetMapping
 	@ResponseBody
-	public ResponseEntity<List<Asiento>> getAllUser(){
-		List<Asiento> listAsiento = service.getAllAsiento();
-		return ResponseEntity.ok(listAsiento);
+	public ResponseEntity<List<Genero>> getTicket(){
+		List<Genero> listBoleto = service.getAllGenero();
+		return ResponseEntity.ok(listBoleto);
 	}
 }

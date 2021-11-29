@@ -42,6 +42,12 @@ public class UsuarioServiceImpl implements UsuarioService{
 		 repository.deleteById(id);
 		
 	}
+
+	@Override
+	public Usuario obtenerEmail(String email) {
+		// TODO Auto-generated method stub
+		return repository.findByEmail(email);
+	}
 	
 
 }

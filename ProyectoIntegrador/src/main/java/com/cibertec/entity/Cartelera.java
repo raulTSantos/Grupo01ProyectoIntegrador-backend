@@ -1,8 +1,4 @@
 package com.cibertec.entity;
-
-
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -38,25 +34,13 @@ public class Cartelera {
 	@JoinColumn(name ="idCine") 
 	private Cine cine; 
 	
-	/*
-	 * @JsonFormat(pattern = "yyyy-MM-dd", timezone="America/Lima" )
-	 * 
-	 * @Temporal(TemporalType.DATE)
-	 * 
-	 * @DateTimeFormat(pattern = "yyyy-MM-dd")
-	 */
-	private String fecha;
-	
-	/*
-	 * @JsonFormat(pattern = "HH:mm:ss", timezone="America/Lima" )
-	 * 
-	 * @Temporal(TemporalType.TIME)
-	 * 
-	 * @DateTimeFormat(pattern = "HH-mm-ss")
-	 */
+	 @JsonFormat(pattern = "yyyy-MM-dd", timezone="America/Lima" ) 
+	 @Temporal(TemporalType.DATE)
+	 @DateTimeFormat(pattern = "yyyy-MM-dd")
+	 
+	private Date fecha;
+
 	private String hora ;
-	
-	private String descripcion;
 
 	public int getIdCartelera() {
 		return idCartelera;
@@ -82,14 +66,6 @@ public class Cartelera {
 		this.cine = cine;
 	}
 
-	public String getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(String fecha) {
-		this.fecha = fecha;
-	}
-
 	public String getHora() {
 		return hora;
 	}
@@ -98,13 +74,13 @@ public class Cartelera {
 		this.hora = hora;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public Date getFecha() {
+		return fecha;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	} 
-	
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
 	
 }

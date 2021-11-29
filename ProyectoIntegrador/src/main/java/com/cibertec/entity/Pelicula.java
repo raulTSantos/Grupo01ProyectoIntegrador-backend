@@ -68,17 +68,17 @@ public class Pelicula {
 		this.director = director;
 	}
 
-	public Genero getIdGenero() {
-		return genero;
-	}
-	public void setIdGenero(Genero idGenero) {
-		this.genero = idGenero;
-	}
 	public String getRestriccion() {
 		return restriccion;
 	}
 	public void setRestriccion(String restriccion) {
 		this.restriccion = restriccion;
+	}
+	public Genero getGenero() {
+		return genero;
+	}
+	public void setGenero(Genero genero) {
+		this.genero = genero;
 	}
 	
 	
