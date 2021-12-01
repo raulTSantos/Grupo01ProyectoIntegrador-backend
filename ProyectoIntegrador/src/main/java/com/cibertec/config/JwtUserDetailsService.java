@@ -41,7 +41,6 @@ public class JwtUserDetailsService implements UserDetailsService {
 		newUser.setAmaterno(user.getAmaterno());
 		newUser.setApaterno(user.getApaterno());
 		newUser.setLogin(user.getLogin());
-		newUser.setDni(user.getDni());
 		newUser.setNombres(user.getNombres());
 		
 		newUser.setEmail(user.getEmail());
